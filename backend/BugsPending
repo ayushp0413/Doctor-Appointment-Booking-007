@@ -1,0 +1,5 @@
+after auth middlewares --- > if page is protected then server stops.... ====> Go to backend and run again
+
+Updating model after booking --- > user and Doctor also provide an option for selecting time slots
+
+
