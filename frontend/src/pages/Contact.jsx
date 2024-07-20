@@ -1,3 +1,5 @@
+import {toast} from "react-toastify"
+
 const Contact = () => {
   return (
     <section>
@@ -36,9 +38,11 @@ const Contact = () => {
             />
           </div>
 
-          <button type="submit" className="btn rounded sm:w-fit">
+          <button 
+            onClick={() => toast.success("Message Submitted")}
+            type="submit" className="btn rounded sm:w-fit">
             Submit
-            </button>
+          </button>
         </form>
       </div>
     </section>

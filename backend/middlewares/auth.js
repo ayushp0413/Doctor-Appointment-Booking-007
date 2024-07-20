@@ -66,7 +66,7 @@ export const isPatient = async(req,res,next)=>{
 export const isDoctor = async(req,res,next)=>{
     try
     {
-        if(req.role!=="doctor" || req.role!=='Doctor')
+        if(req.role!=="doctor")
         {
             res.status(401).json({
                 success:false,
