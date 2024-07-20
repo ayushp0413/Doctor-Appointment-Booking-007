@@ -6,17 +6,16 @@ const Appointments = ({ appointments }) => {
     {
     appointments.length === 0 ? (<div className=' text-primaryColor'>No Appointments yet!</div>) : (  
       
-    <table className='w-full  tex-sm text-gray-500'>
-    <thread className='text-xs p-4 text-gray-700 uppercase bg-gray-100 '>
-      <tr className=''>
+    <table className='w-full  tex-sm text-gray-500 '>
+      
+    <tbody>
+    <tr className='text-xs p-4 text-gray-700 uppercase bg-gray-100 w-full'>
         <th scope='col' className='px-6 py-3'>Name</th>
         <th scope='col' className='px-6 py-3'>Gender</th>
         <th scope='col' className='px-6 py-3'>Payment</th>
         <th scope='col' className='px-6 py-3'>Price</th>
         <th scope='col' className='px-6 py-3'>Booked On</th>
       </tr>
-    </thread>
-    <tbody>
       {appointments?.map(item => (
         <tr key={item._id}>
           <td scope='row' className='flex items-center px-6 py-4 text-gray-900 whitespace-nowrap'>
@@ -37,7 +36,7 @@ const Appointments = ({ appointments }) => {
               UnPaid
             </div>)}
           </td>
-          <td className='px-6 py-4'>{item.ticektPrice}</td>
+          <td className='px-6 py-4'>{item.ticketPrice}</td>
           <td className='px-6 py-4'>{formateDate(item.createdAt)}</td>
         </tr>
       ))}
