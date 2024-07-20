@@ -1,0 +1,3 @@
+After Login new user/doctor -- > first reload otherwise protected route errow will occur
+Doctor Appointment list Table is not proper 
+Option of Slecting the time slot if doctor has two or more time 

@@ -38,7 +38,10 @@ const Home = () => {
                   fuga in asperiores tempora aliquid?
                 </p>
 
+                <Link to={"/doctors"}>
                 <button className='btn '>Request an Appointment</button>
+                </Link>
+                
               </div>
 
               {/* Hero Counter */}

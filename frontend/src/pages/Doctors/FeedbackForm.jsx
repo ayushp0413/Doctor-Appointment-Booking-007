@@ -1,15 +1,52 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
+import HashLoader from 'react-spinners/HashLoader'
 import { AiFillStar } from 'react-icons/ai'
+import { useParams } from 'react-router-dom'
+import { BASE_URL, token  } from '../../config'
+import { toast, ToastContainer } from 'react-toastify'
 
 const FeedbackForm = () => {
   const [rating, setRating] = useState(0)
   const [hover, setHover] = useState(0)
   const [reviewText, setReviewText] = useState('')
+  const [loading, setLoading] = useState(false);
+  const {id} = useParams();
+  
 
   const handleSubmitReview = async e => {
     e.preventDefault()
+    setLoading(true);
 
-    // Yaha hum baad me api use karenge
+    console.log("RR : ", rating, reviewText)
+
+    try {
+
+      if(!rating || !reviewText) {
+        setLoading(false);
+        return toast.error("Rating and Review Fields required");
+      }
+
+      const res = await fetch(`${BASE_URL}/doctors/${id}/reviews`,{
+        method:'post',
+        headers:{
+          'Content-Type': 'application/json',
+          Authorization : `Bearer ${token}`
+        },
+        body: JSON.stringify({rating, reviewText})
+      })
+
+      const result = await res.json();
+      if(!res.ok){
+        throw new Error(result.message)
+      }
+      setLoading(false);
+      toast.success(result.message);
+
+    } catch (error) {
+      setLoading(false);
+      toast.error(error.message)
+    }
+
   }
 
   return (
@@ -57,13 +94,13 @@ const FeedbackForm = () => {
         <textarea
           className='border border-solid border-[#0066ff34] focus:outline outline-primaryColor w-full px-4 py-3 rounded-md'
           placeholder='Write your message'
-          onClick={() => setReviewText(e.target.value)}
+          onChange={(e) => setReviewText(e.target.value)}
           rows='5'
         ></textarea>
       </div>
 
       <button className='btn' onClick={handleSubmitReview} type='submit'>
-        Submit Feedback
+        {loading ? <HashLoader size={25} color='#ffffff' /> : "Submit Feedback"}
       </button>
     </form>
   )
