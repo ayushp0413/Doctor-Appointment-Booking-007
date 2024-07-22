@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import avatar from '../../assets/images/avatar-icon.png'
 import { formateDate } from '../../utils/formateDate'
 import {AiFillStar} from 'react-icons/ai'
 import FeedbackForm from './FeedbackForm'
+import { authContext } from '../../context/AuthContext.jsx'
 
 
 const Feedback = ({reviews, totalRating}) => {
 
-
-  console.log("ewsfws", reviews, totalRating);
-
     const [showFeedbackForm, setShowFeedbackForm] = useState(false)
+    const {role} = useContext(authContext);
 
   return (
     <div>
@@ -49,7 +48,7 @@ const Feedback = ({reviews, totalRating}) => {
           ))}
       </div>
 
-     {!showFeedbackForm &&  <div className="text-center">
+     {!showFeedbackForm && role === 'patient' && <div className="text-center">
         <button onClick={()=> setShowFeedbackForm(true)} className='btn'>Give Feedback</button>
     </div>}
 

@@ -1,7 +1,7 @@
 import { useContext,useEffect,useState } from "react";
 import React from "react";
 import userImg from "../../assets/images/doctor-img01.png";
-import { authContext } from "../../context/authContext";
+import { authContext } from "../../context/AuthContext.jsx";
 import Loading from "../../components/Loader/Loading";
 import Error from "../../components/Error/Error";
 import useFetchData from "../../hooks/useFetchData";
