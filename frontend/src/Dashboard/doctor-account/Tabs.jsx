@@ -1,7 +1,7 @@
 
 import {useContext} from 'react'
 import { BiMenu } from 'react-icons/bi'
-import { authContext } from '../../context/authContext'
+import { authContext } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import deleteAccount from '../../hooks/deleteAccout'
