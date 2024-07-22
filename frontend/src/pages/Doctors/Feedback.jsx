@@ -3,7 +3,7 @@ import avatar from '../../assets/images/avatar-icon.png'
 import { formateDate } from '../../utils/formateDate'
 import {AiFillStar} from 'react-icons/ai'
 import FeedbackForm from './FeedbackForm'
-import { authContext } from '../../context/AuthContext.jsx'
+import { authContext } from '../../Context/AuthContext.jsx'
 
 
 const Feedback = ({reviews, totalRating}) => {
