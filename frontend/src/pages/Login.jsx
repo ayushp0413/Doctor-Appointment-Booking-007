@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { BASE_URL } from "../config"
 import { toast } from "react-toastify"
 import HashLoader from "react-spinners/HashLoader.js"
-import { authContext } from "../context/AuthContext.jsx"
+import { authContext } from "../Context/AuthContext.jsx"
 
 const Login = () => {
 
