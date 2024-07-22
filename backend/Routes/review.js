@@ -6,6 +6,6 @@ const router = express.Router({mergeParams: true});
 router
     .route("/")
     .get(getAllReviews)
-    .post(auth, isPatient, createReview) 
+    .post(auth, createReview) 
 
 export default router    

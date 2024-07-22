@@ -19,12 +19,15 @@ const DoctorDetails = () => {
 
   const { data:doctor, loading, error } = useFetchData(`${BASE_URL}/doctors/${id}`)
 
+  console.log("ROLEKBKEI : ", doctor)
+
   const { name,
     qualifications,
     experiences,
     timeSlots,
     reviews,
     bio,
+    role,
     about,
     averageRating,
     totalRating,
@@ -91,7 +94,7 @@ const DoctorDetails = () => {
                 tab==='about' && <DoctorAbout name={name} about={about} qualification={qualifications} experiences={experiences}/>
               }{
                 tab==='feedback' && <Feedback
-                  reviews={reviews} totalRating={totalRating} />
+                  reviews={reviews} totalRating={totalRating} role={role} />
               }
             </div>
 

@@ -64,5 +64,5 @@ app.listen(port , () => {
 
 
 app.get("/", (req, res) => {
-    res.send(`<h1> Server is up ans running`)
+    res.send(`<h1> Server is up and running`)
 })
