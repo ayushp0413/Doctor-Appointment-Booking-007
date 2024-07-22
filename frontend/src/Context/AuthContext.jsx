@@ -53,3 +53,4 @@ export const AuthContextProvider = ({ children }) => {
     );
   };
   
+// context folder name changed
